@@ -1,19 +1,24 @@
-
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-
+import getAPIData from './business.js';
 
 
 // UI Logic 
+
+export function printExchange(response, isoCode, amount) {
+  let rate = parseFloat(response.conversion_rate);
+  let result = parseFloat(response.conversion_result);
+  let text = `The conversion rate from USD to ${isoCode} is ${rate}.
+  Converting your ${amount} in USD to ${isoCode}would result in ${(result).toFixed(2)} ${isoCode}.`
+}
 
 function handleFormSubmission(event){
   event.preventDefault();
   let amount = parseFloat(document.querySelector('#amount').value);
   let isoCode = document.querySelector('#isoCode').value;
-  getExchange(amount, isoCode);
-}
-
-
-
+  getAPIData(amount, isoCode);
+};
 
 window.addEventListener("load", function() {
   const form = this.document.querySelector('form');
