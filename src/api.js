@@ -6,7 +6,7 @@ export default class Exchange {
       if(!response.ok) {
         if (response.status === 404) {
           const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}
-          ${code2} is not a valid Currency Code.`;
+          Make sure both Currency Code inputs are valid.`;
           throw new Error(errorMessage);
         }
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
