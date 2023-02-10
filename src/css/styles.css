@@ -1,0 +1,47 @@
+body {
+  background-color: turquoise;
+}
+.hidden {
+  display: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.form-box {
+  text-align: center;
+  color: blueviolet;
+  margin: 0px 10px;
+}
+
+#Java {
+  background-color: yellow;
+  border: 5px solid black;
+}
+
+#python {
+  background-color: yellow;
+  border: 5px solid black;
+}
+
+#C {
+  background-color: yellow;
+  border: 5px solid black;
+}
+
+#error {
+  background-color: red;
+  border: 5px solid black;
+}
+
+.sticky {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: black;
+  text-align: center;
+  padding: 5px 0px;
+}
