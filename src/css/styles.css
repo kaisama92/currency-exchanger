@@ -1,12 +1,24 @@
 body {
-  background-color: turquoise;
+  background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(https://blog.remitly.com/wp-content/uploads/2021/07/money-072821-1-1024x683.jpg.webp) no-repeat center fixed;
+  background-size: cover;
 }
 
 form {
-  border: 3px solid black;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  border: 3px solid rgb(0, 0, 0);
   margin: 0 5%;
   box-sizing: border-box;
   padding: 3px;
+}
+
+#results {
+  border: 3px solid black;
+  margin: 10px 5%;
+
+}
+
+.hidden {
+  display: none;
 }
 
 .centered {
