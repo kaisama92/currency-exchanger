@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
   <head>
     <title>Using Giphy</title>
@@ -9,8 +9,8 @@
     <form>
       <label for="amount">Enter Amount to be Exchanged in US Dollars:</label>
       <input type="number" min="0" id="amount" name="amount">
-      <label for="exchange">Currency to Convert to in its Three Letter Currency Code. Visit <a href:"https://www.exchangerate-api.com/docs/supported-currencies">ExchangeRate-API For Accepted Codes.</a></label>
-      <input type="text" maxlength="3">
+      <label for="isoCode">Currency to Convert to in its Three Letter Currency Code. Visit <a href="https://www.exchangerate-api.com/docs/supported-currencies">ExchangeRate-API</a> For Accepted Codes.</label>
+      <input id="isoCode" type="text" maxlength="3">
       <button type="submit">Exchange</button>
     </form>
 
