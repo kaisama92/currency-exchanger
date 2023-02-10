@@ -11,12 +11,12 @@
 
     <form>
       <label for="isoCode1">Input a valid <a href="https://www.exchangerate-api.com/docs/supported-currencies">Currency Code</a></label>
-      <input type="text" id="isoCode1" maxlength="3">
+      <input type="text" id="isoCode1" maxlength="3" value="USD">
       <label for="amount">Enter Amount to be Exchanged in Your Starting Currency:</label>
       <input type="number" min="0.01" placeholder="1.0" value="1.0" step="0.01" id="amount" name="amount">
       <br>
       <label for="isoCode2">Input another valid Currency Code</label>
-      <input id="isoCode2" type="text" maxlength="3">
+      <input id="isoCode2" type="text" maxlength="3" value="EUR">
       <button type="submit">Exchange</button>
     </form>
 
