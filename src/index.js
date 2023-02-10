@@ -17,7 +17,7 @@ export function printExchange(response, isoCode, amount) {
 export function printError(error) {
   document.querySelector('#results').innerText = error;
 }
-
+ 
 function handleFormSubmission(event){
   event.preventDefault();
   let amount = parseFloat(document.querySelector('#amount').value);
