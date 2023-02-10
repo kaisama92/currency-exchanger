@@ -1,6 +1,6 @@
-# JS Dev Environment Template
+# Currency-Exchanger
 
-#### This Application sets up a development environment. 
+#### This Application Converts an Amount in USD to a Desired Currency 
 
 #### By Kai Clausen
 
@@ -15,16 +15,19 @@
 * _Node_
 * _Webpack_
 * _ESLint_
+* _ExchangeRate API_
 
 ## Description
 
-_This application will set up a JavaScript dev environment utilizing the technologies listed above. This makes starting and working on a modular application easier._
+_This application will take two inputs, a number input and a three letter input, and run the number input through the ExchangeRate API and return the resulting amount in the desired currency._
 
 ## Setup/Installation Requirements
 
 * _Clone this repository to your Desktop_
 * _Install Node._
 * _Type the command 'npm install' into your command line. This will install the technologies needed by the dev environment._
+* _Set up an account with ExchangeRate-API to get your free API key._
+* _Create a file in the top level of the currency-exchanger directory called '.env' and store 'YOUR-API-KEY' there in this format `API_KEY='YOUR-API-KEY'`_
 * _Use the command 'npm run build' to build your project._
 * _Use the command 'npm run start' to build your project and start a live server._
 * _Use the command 'npm run lint' to use ESLint on your project._
@@ -33,7 +36,7 @@ _This application will set up a JavaScript dev environment utilizing the technol
 
 ## Known Bugs
 
-* _In some cases, npm may not function properly. To fix this, you will need to install a node version manager to find a version of Node that works. I used version 16.14.0_
+* _If you enter a number instead of a letter, you will get a TypeError. This just means you need to enter a number in the field._
 
 ## License
 
