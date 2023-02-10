@@ -26,7 +26,7 @@ function handleFormSubmission(event){
   let isoCode1 = document.querySelector('#isoCode1').value.toUpperCase();
   let isoCode2 = document.querySelector('#isoCode2').value.toUpperCase();
   getAPIData(amount, isoCode1, isoCode2);
-}
+} 
 
 window.addEventListener("load", function() {
   const form = this.document.querySelector('form');
