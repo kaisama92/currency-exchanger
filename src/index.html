@@ -7,10 +7,12 @@
 
   <body class="centered">
     <form>
-      <label for="amount">Enter Amount to be Exchanged in US Dollars:</label>
+      <label for="isoCode1"></label>
+      <input type="text" id="isoCode1" maxlength="3">
+      <label for="amount">Enter Amount to be Exchanged in Your Starting Currency:</label>
       <input type="number" min="0" id="amount" name="amount">
-      <label for="isoCode">Currency to Convert to in its Three Letter Currency Code. Visit <a href="https://www.exchangerate-api.com/docs/supported-currencies">ExchangeRate-API</a> For Accepted Codes.</label>
-      <input id="isoCode" type="text" maxlength="3">
+      <label for="isoCode2">Currency to Convert to in its Three Letter Currency Code. Visit <a href="https://www.exchangerate-api.com/docs/supported-currencies">ExchangeRate-API</a> For Accepted Codes.</label>
+      <input id="isoCode2" type="text" maxlength="3">
       <button type="submit">Exchange</button>
     </form>
 

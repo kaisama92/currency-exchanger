@@ -6,23 +6,24 @@ import getAPIData from './business.js';
 
 // UI Logic 
 
-export function printExchange(response, isoCode, amount) {
+export function printExchange(response, isoCode1, isoCode2, amount) {
   let rate = parseFloat(response.conversion_rate);
   let result = parseFloat(response.conversion_result);
-  let text = `The conversion rate from USD to ${isoCode} is ${rate}.
-  Converting your ${amount} in USD to ${isoCode} would result in ${(result).toFixed(2)} ${isoCode}.`;
+  let text = `The conversion rate from ${isoCode1} to ${isoCode2} is ${rate}.
+  Converting your ${amount} in ${isoCode1} to ${isoCode2} would result in ${(result).toFixed(2)} ${isoCode2}.`;
   document.querySelector('#results').innerText = text;
 }
 
 export function printError(error) {
   document.querySelector('#results').innerText = error;
 }
- 
+
 function handleFormSubmission(event){
   event.preventDefault();
   let amount = parseFloat(document.querySelector('#amount').value);
-  let isoCode = document.querySelector('#isoCode').value.toUpperCase();
-  getAPIData(amount, isoCode);
+  let isoCode1 = document.querySelector('#isoCode1').value.toUpperCase();
+  let isoCode2 = document.querySelector('#isoCode2').value.toUpperCase();
+  getAPIData(amount, isoCode1, isoCode2);
 }
 
 window.addEventListener("load", function() {
