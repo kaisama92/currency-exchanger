@@ -7,7 +7,9 @@ import getAPIData from './business.js';
 // UI Logic 
 
 export function printExchange(response, isoCode1, isoCode2, amount) {
-  document.querySelector('.hidden').removeAttribute('class');
+  if (document.querySelector('#results').hasAttribute('class')) {
+    document.querySelector('#results').removeAttribute('class');
+  }
   let rate = parseFloat(response.conversion_rate);
   let result = parseFloat(response.conversion_result);
   let text = `The conversion rate from ${isoCode1} to ${isoCode2} is ${rate}.
