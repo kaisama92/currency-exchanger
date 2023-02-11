@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import getAPIData from './business.js';
+import { getAPIData, getSessionData } from './business.js';
 
 
 // UI Logic 
@@ -22,15 +22,27 @@ export function printError(error) {
   document.querySelector('#results').innerText = error;
 }
 
-function handleFormSubmission(event){
+function handleInitialFormSubmission(event){
   event.preventDefault();
+  document.querySelector('#submit').setAttribute('class', 'hidden');
+  document.querySelector('#resubmit').removeAttribute('class');
   let amount = parseFloat(document.querySelector('#amount').value);
   let isoCode1 = document.querySelector('#isoCode1').value.toUpperCase();
   let isoCode2 = document.querySelector('#isoCode2').value.toUpperCase();
   getAPIData(amount, isoCode1, isoCode2);
 } 
 
+function handleSubsequentFormSubmissions(event){
+  event.preventDefault();
+  let amount = parseFloat(document.querySelector('#amount').value);
+  let isoCode1 = document.querySelector('#isoCode1').value.toUpperCase();
+  let isoCode2 = document.querySelector('#isoCode2').value.toUpperCase();
+  getSessionData(amount, isoCode1, isoCode2);
+}
+
 window.addEventListener("load", function() {
   const form = this.document.querySelector('form');
-  form.addEventListener('submit', handleFormSubmission);
+  form.addEventListener('submit', handleInitialFormSubmission);
+  const resubmit = this.document.querySelector('#resubmit');
+  resubmit.addEventListener('click', handleSubsequentFormSubmissions)
 });

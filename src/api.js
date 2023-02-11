@@ -12,6 +12,7 @@ export default class Exchange {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
+      sessionStorage.setItem("apiOutput",jsonifiedResponse);
       return jsonifiedResponse;
     } catch(error) {
       return error;

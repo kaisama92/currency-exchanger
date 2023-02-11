@@ -1,7 +1,7 @@
 import Exchange from './api.js';
 import { printExchange, printError } from './index.js';
 
-export default function getAPIData(amount, isoCode1, isoCode2) {
+export function getAPIData(amount, isoCode1, isoCode2) {
   Exchange.getExchange(amount, isoCode1, isoCode2)
     .then(function(exchangeResponse) {
       if (isoCode1 === "") {
@@ -23,4 +23,9 @@ export default function getAPIData(amount, isoCode1, isoCode2) {
     .catch(function(error){
       printError(error);
     });
+}
+
+export function getSessionData(amount, isoCode1, isoCode2) {
+  let data = sessionStorage.getItem("apiOutput");
+  
 }
