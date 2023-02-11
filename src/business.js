@@ -1,5 +1,5 @@
 import Exchange from './api.js';
-import { printExchange, printError } from './index.js';
+import { printExchange, printError, printSession } from './index.js';
 
 export function getAPIData(amount, isoCode1, isoCode2) {
   Exchange.getExchange(amount, isoCode1, isoCode2)
@@ -27,5 +27,21 @@ export function getAPIData(amount, isoCode1, isoCode2) {
 
 export function getSessionData(amount, isoCode1, isoCode2) {
   let data = sessionStorage.getItem("apiOutput");
-  
+  if (isoCode1 === "USD") {
+    if (isoCode2 in data) {
+      let result = amount * data.isoCode2;
+      printSession(amount, isoCode1, isoCode2, result);
+    } else {
+      let errorMessage = `Please enter a valid Currency Code in last input field.`;
+      printError(errorMessage);
+    }
+  } else if (isoCode2 === "USD") {
+    if (isoCode1 in data) {
+      let result = amount / data.isocode1;
+      printSession(amount, isoCode1, isoCode2, result);
+    } else {
+      let errorMessage = `Please enter a valid Currency Code in first input field.`;
+      printError(errorMessage);
+    }
+  }
 }

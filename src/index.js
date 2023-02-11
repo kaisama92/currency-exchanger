@@ -17,8 +17,19 @@ export function printExchange(response, isoCode1, isoCode2, amount) {
   document.querySelector('#results').innerText = text;
 }
 
+export function printSession(amount, isoCode1, isoCode2, result){
+  if (document.querySelector('#results').hasAttribute('class')) {
+    document.querySelector('results').removeAttribute('class');
+  }
+  let text = `The conversion rate from ${isoCode1} to ${isoCode2}`
+
+}
+
+
 export function printError(error) {
-  document.querySelector('.hidden').removeAttribute('class');
+  if (document.querySelector('#results').hasAttribute('class')){
+    document.querySelector('.hidden').removeAttribute('class');
+  }
   document.querySelector('#results').innerText = error;
 }
 
