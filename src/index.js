@@ -21,7 +21,7 @@ export function printSession(amount, isoCode1, isoCode2, result){
   if (document.querySelector('#results').hasAttribute('class')) {
     document.querySelector('results').removeAttribute('class');
   }
-  let text = `The conversion rate from ${isoCode1} to ${isoCode2}`
+  let text = `The conversion rate from ${isoCode1} to ${isoCode2} is ${}`
 
 }
 
@@ -40,7 +40,11 @@ function handleInitialFormSubmission(event){
   let amount = parseFloat(document.querySelector('#amount').value);
   let isoCode1 = document.querySelector('#isoCode1').value.toUpperCase();
   let isoCode2 = document.querySelector('#isoCode2').value.toUpperCase();
-  getAPIData(amount, isoCode1, isoCode2);
+  if ("result" in sessionStorage.getItem("apiOutput") && (isoCode1 === "USD" || isoCode2 === "USD")) {
+    getSessionData(amount, isoCode1, isoCode2);
+  } else {
+    getAPIData(amount, isoCode1, isoCode2);
+  }
 } 
 
 function handleSubsequentFormSubmissions(event){
